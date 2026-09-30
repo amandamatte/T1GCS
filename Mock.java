@@ -50,11 +50,4 @@ public class Mock {
 
         return funcionarios;
     }
-
-    /* public Funcionario pesquisaPorId(int id) {
-        for(Funcionario f : funcionarios) {
-            if(f.getId() == id) return f;
-        }
-        return null;
-    }*/
 }

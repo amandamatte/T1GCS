@@ -11,7 +11,6 @@ public class App {
     }
 
     public void executar() {
-        Mock mock = new Mock();
         int opcao;
         do {
             System.out.println("SISTEMA DE PEDIDOS -- TRABALHO 1 GCS");
@@ -23,7 +22,8 @@ public class App {
                 case 0:
                     break;
                 case 1:
-                    List<Funcionario> funcionarios = mock.carregarFuncionarios(null);
+                    List<Departamento> departamentos = Mock.carregarDepartamentos();
+                    List<Funcionario> funcionarios = Mock.carregarFuncionarios(departamentos);
                     mudarUsuarioPorId(funcionarios);
                     break;
                 case 2:
