@@ -2,6 +2,7 @@ import java.util.*;
 
 public class App {
     private Scanner entrada;
+    Funcionario usuarioLogado;
 
     public App() {
         entrada = new Scanner(System.in);
@@ -19,7 +20,7 @@ public class App {
                 case 0:
                     break;
                 case 1:
-                    //
+                    mudarUsuarioPorId();
                     break;
                 case 2:
                     //
@@ -51,5 +52,24 @@ public class App {
         System.out.println("[4] ");
         System.out.println("[5] ");
         System.out.println("[6] ");
+    }
+
+    public void mudarUsuarioPorId(int id, List<Funcionario> funcionarios) {
+        for (Funcionario f : funcionarios) {
+            if (f.getId() == id) {
+                usuarioLogado = f;
+                System.out.println("Usuário atual: " + f.getNome());
+                return;
+            }
+        }
+        System.out.println("Usuário com ID não encontrado.");
+    } 
+
+    public void registrarPedido(){
+
+    }
+
+    public void excluirPedido(){
+
     }
 }
