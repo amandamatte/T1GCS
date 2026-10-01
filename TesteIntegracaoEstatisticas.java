@@ -36,6 +36,7 @@ public class TesteIntegracaoEstatisticas {
     }
 
     private static void verificar(boolean condicao, String nome) {
-        if (!condicao) throw new AssertionError("Falha: " + nome);
+        if (!condicao)
+            throw new AssertionError("Falha: " + nome);
     }
 }
