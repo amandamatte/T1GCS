@@ -33,7 +33,7 @@ public class App {
                     excluirPedido();
                     break;
                 case 4:
-                    //
+                    exibirPainelGerencial();
                     break;
                 case 5:
                     //
@@ -53,7 +53,7 @@ public class App {
         System.out.println("[1] Mudar de usuario por ID");
         System.out.println("[2] Registrar um novo pedido de aquisicao");
         System.out.println("[3] Excluir pedido de aquisicao");
-        System.out.println("[4] ");
+        System.out.println("[4] Exibir painel gerencial (administrador)");
         System.out.println("[5] ");
         System.out.println("[6] ");
     }
@@ -111,10 +111,12 @@ public class App {
         int idProcurado = entrada.nextInt();
         entrada.nextLine();
 
-        for (Pedido pedido : pedidos) {
+        Iterator<Pedido> iterator = pedidos.iterator();
+        while (iterator.hasNext()) {
+            Pedido pedido = iterator.next();
             if (pedido.getId() == idProcurado) {
                 if (pedido.getSolicitante().getId() == usuarioLogado.getId()) {
-                    pedidos.remove(pedido);
+                    iterator.remove();
                     System.out.println("Pedido excluído com sucesso.");
                     return; 
                 } else {
@@ -124,5 +126,16 @@ public class App {
             }
         }
         System.out.println("ID do pedido não encontrado.");
+    }
+
+    private void exibirPainelGerencial() {
+        if (usuarioLogado == null || usuarioLogado.getTipo() != TipoFuncionario.ADMINISTRADOR) {
+            System.out.println("Apenas administradores podem acessar o painel gerencial.");
+            return;
+        }
+        System.out.print(EstatisticasPedidos.gerarPainel(pedidos));
+    }
+    public List<Pedido> getPedidos() {
+        return Collections.unmodifiableList(pedidos);
     }
 }

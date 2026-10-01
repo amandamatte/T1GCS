@@ -23,26 +23,26 @@ public class Mock {
         Departamento manutencao = departamentos.get(3);
         Departamento vendas = departamentos.get(4);
 
-    // Financeiro
+        // Financeiro
         funcionarios.add(new Funcionario(1, "Ana Silva", "AS", TipoFuncionario.ADMINISTRADOR, financeiro));
         funcionarios.add(new Funcionario(2, "Carlos Souza", "CS", TipoFuncionario.FUNCIONARIO, financeiro));
         funcionarios.add(new Funcionario(3, "Beatriz Lima", "BL", TipoFuncionario.FUNCIONARIO, financeiro));
 
-    // RH
+        // RH
         funcionarios.add(new Funcionario(4, "Mariana Costa", "MC", TipoFuncionario.ADMINISTRADOR, rh));
         funcionarios.add(new Funcionario(5, "Lucas Rocha", "LR", TipoFuncionario.FUNCIONARIO, rh));
         funcionarios.add(new Funcionario(6, "Juliana Mendes", "JM", TipoFuncionario.FUNCIONARIO, rh));
 
-    // Engenharia
+        // Engenharia
         funcionarios.add(new Funcionario(7, "Gabriel Alves", "GA", TipoFuncionario.ADMINISTRADOR, engenharia));
         funcionarios.add(new Funcionario(8, "Jussara Freitas", "JF", TipoFuncionario.FUNCIONARIO, engenharia));
         funcionarios.add(new Funcionario(9, "Rafael Dias", "RD", TipoFuncionario.FUNCIONARIO, engenharia));
 
-    // Manutenção
+        // Manutenção
         funcionarios.add(new Funcionario(10, "Roberto Santos", "RS", TipoFuncionario.ADMINISTRADOR, manutencao));
         funcionarios.add(new Funcionario(11, "Fernanda Lima", "FL", TipoFuncionario.FUNCIONARIO, manutencao));
 
-    // Vendas
+        // Vendas
         funcionarios.add(new Funcionario(12, "Camila Duarte", "CD", TipoFuncionario.ADMINISTRADOR, vendas));
         funcionarios.add(new Funcionario(13, "Bruno Farias", "BF", TipoFuncionario.FUNCIONARIO, vendas));
         funcionarios.add(new Funcionario(14, "Larissa Antunes", "LA", TipoFuncionario.FUNCIONARIO, vendas));
