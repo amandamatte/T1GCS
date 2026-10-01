@@ -1,5 +1,6 @@
 public enum StatusPedido {
     PENDENTE,
     APROVADO,
-    REPROVADO
+    REPROVADO,
+    CONCLUIDO
 }

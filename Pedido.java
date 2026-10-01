@@ -23,6 +23,11 @@ public class Pedido {
         return itens.stream().mapToDouble(ItemPedido::getValorTotalItem).sum();
     }
 
+    public void concluirPedido() {
+        this.status = StatusPedido.CONCLUIDO;
+        this.dataConclusao = LocalDate.now();
+    }
+
     // getters e setters p ajudar vcs no resto das classes
     public int getId() { 
         return id; 
