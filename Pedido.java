@@ -53,6 +53,10 @@ public class Pedido {
         this.dataConclusao = dataConclusao; 
     }
 
+    public void setDataPedido(LocalDate dataPedido) {
+        this.dataPedido = dataPedido;
+    }
+
     public StatusPedido getStatus() { 
         return status; 
     }
@@ -63,6 +67,9 @@ public class Pedido {
 
     public List<ItemPedido> getItens() { 
         return itens; 
+    }
+    public boolean isAberto() {
+        return status == StatusPedido.PENDENTE;
     }
 
     @Override

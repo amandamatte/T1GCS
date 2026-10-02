@@ -258,10 +258,12 @@ public class App {
         int idProcurado = entrada.nextInt();
         entrada.nextLine();
 
-        for (Pedido pedido : pedidos) {
+        Iterator<Pedido> iterator = pedidos.iterator();
+        while (iterator.hasNext()) {
+            Pedido pedido = iterator.next();
             if (pedido.getId() == idProcurado) {
                 if (pedido.getSolicitante().getId() == usuarioLogado.getId()) {
-                    pedidos.remove(pedido);
+                    iterator.remove();
                     System.out.println("Pedido excluído com sucesso.");
                     return; 
                 } else {
@@ -271,5 +273,16 @@ public class App {
             }
         }
         System.out.println("ID do pedido não encontrado.");
+    }
+
+    private void exibirPainelGerencial() {
+        if (usuarioLogado == null || usuarioLogado.getTipo() != TipoFuncionario.ADMINISTRADOR) {
+            System.out.println("Apenas administradores podem acessar o painel gerencial.");
+            return;
+        }
+        System.out.print(EstatisticasPedidos.gerarPainel(pedidos));
+    }
+    public List<Pedido> getPedidos() {
+        return Collections.unmodifiableList(pedidos);
     }
 }
